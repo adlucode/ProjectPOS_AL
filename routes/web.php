@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CetakController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
@@ -40,3 +41,5 @@ Route::get('order',function(){
 Route::get('cetakReceipt',[CetakController::class,'receipt'])->name('cetakReceipt')->middleware('auth');
 
 Route::get('/',[WelcomeController::class,'welcome'])->middleware('auth');
+
+Route::get('laporan', [LaporanController::class, 'index'])->name('laporan.index');
